@@ -1,7 +1,7 @@
 Welcome to Qham's documentation!
 ================================
 
-Welcome to Qham, a Python SDK designed to bridge the gap between theoretical physics and practical quantum computing applications...
+Welcome to Qham, a Python SDK designed to bridge the gap between theoretical physics and practical quantum computing applications.
 
 .. toctree::
    :maxdepth: 2
@@ -13,7 +13,7 @@ Welcome to Qham, a Python SDK designed to bridge the gap between theoretical phy
    :maxdepth: 2
    :caption: API
 
-   api/FHM/fhm
+   fhm
    
 HMB Modules
 -----------
@@ -21,10 +21,10 @@ HMB Modules
 .. toctree::
    :maxdepth: 2
 
-   api/HMB/hmb 
-   api/HMB/hmbq
-   api/HMB/hmbslq
-   api/HMB/hmbsmlq
+   hmb 
+   hmbq
+   hmbslq
+   hmbsmlq
 
 QHO Modules
 -----------
@@ -32,7 +32,7 @@ QHO Modules
 .. toctree::
    :maxdepth: 2
 
-   api/QHO/qho
+   qho
    
 
 TFIM Modules
@@ -41,5 +41,5 @@ TFIM Modules
 .. toctree::
    :maxdepth: 2
 
-   api/TFIM/tfim  
-   api/TFIM/tfimq
+   tfim  
+   tfimq

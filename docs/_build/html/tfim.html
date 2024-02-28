@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFIMSimulation class &mdash; Qham  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="create_tfim_circuit function" href="tfimq.html" />
+    <link rel="prev" title="QuantumHarmonicOscillator class" href="qho.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Qham</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#core-features">Core Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#getting-started">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fhm.html">HubbardModel class</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hmb.html">HeisenbergModel class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbq.html">create_heisenberg_circuit function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbslq.html">SquareLattice class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbslq.html#create-heisenberg-lattice-circuit-function">create_heisenberg_lattice_circuit function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbsmlq.html">SquareLatticeMatrix class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbsmlq.html#create-heisenberg-square-lattice-matrix-circuit-function">create_heisenberg_square_lattice_matrix_circuit function</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qho.html">QuantumHarmonicOscillator class</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TFIMSimulation class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#TFIMSimulation"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.size"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.beta"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.beta</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.h"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.h</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.steps"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.steps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.lattice"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.lattice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.initialize_lattice"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.initialize_lattice()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.tfim_step"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.tfim_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.run_simulation"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.run_simulation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#TFIMSimulation.plot_lattice"><code class="docutils literal notranslate"><span class="pre">TFIMSimulation.plot_lattice()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tfimq.html">create_tfim_circuit function</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Qham</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TFIMSimulation class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tfim.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tfimsimulation-class">
+<h1>TFIMSimulation class<a class="headerlink" href="#tfimsimulation-class" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="TFIMSimulation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TFIMSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TFIMSimulation" title="Permalink to this definition"></a></dt>
+<dd><p>A class to simulate the Transverse Field Ising Model (TFIM) on a two-dimensional lattice. The TFIM is a model of magnetism in statistical mechanics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – The width and height of the square lattice. Defaults to 10.</p></li>
+<li><p><strong>beta</strong> (<em>float</em><em>, </em><em>optional</em>) – The inverse temperature parameter for the simulation. Defaults to 0.4.</p></li>
+<li><p><strong>h</strong> (<em>float</em><em>, </em><em>optional</em>) – The transverse field strength applied to the system. Defaults to 0.05.</p></li>
+<li><p><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Monte Carlo steps to perform in the simulation. Defaults to 100.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TFIMSimulation.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#TFIMSimulation.size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the lattice (size x size).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TFIMSimulation.beta">
+<span class="sig-name descname"><span class="pre">beta</span></span><a class="headerlink" href="#TFIMSimulation.beta" title="Permalink to this definition"></a></dt>
+<dd><p>The inverse temperature parameter for the simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TFIMSimulation.h">
+<span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#TFIMSimulation.h" title="Permalink to this definition"></a></dt>
+<dd><p>The transverse field strength.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TFIMSimulation.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><a class="headerlink" href="#TFIMSimulation.steps" title="Permalink to this definition"></a></dt>
+<dd><p>The number of simulation steps to run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TFIMSimulation.lattice">
+<span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#TFIMSimulation.lattice" title="Permalink to this definition"></a></dt>
+<dd><p>The lattice representing the spins, initialized randomly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TFIMSimulation.initialize_lattice">
+<span class="sig-name descname"><span class="pre">initialize_lattice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TFIMSimulation.initialize_lattice" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes the lattice to a random state where each spin is either up or down with equal probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A square lattice of spins.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TFIMSimulation.tfim_step">
+<span class="sig-name descname"><span class="pre">tfim_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TFIMSimulation.tfim_step" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a single Monte Carlo step in the TFIM simulation, potentially flipping each spin based on the Metropolis-Hastings algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TFIMSimulation.run_simulation">
+<span class="sig-name descname"><span class="pre">run_simulation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TFIMSimulation.run_simulation" title="Permalink to this definition"></a></dt>
+<dd><p>Runs the TFIM simulation for the number of steps specified in the constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TFIMSimulation.plot_lattice">
+<span class="sig-name descname"><span class="pre">plot_lattice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TFIMSimulation.plot_lattice" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the current state of the lattice using matplotlib, showing the spins as a heatmap.</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading"></a></h2>
+<p>The following example sets up a TFIM simulation with a lattice of size 10x10, runs it for 100 steps, and then plots the final configuration of spins:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the TFIM simulation</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">TFIMSimulation</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Run the simulation</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">run_simulation</span><span class="p">()</span>
+
+<span class="c1"># Plot the final lattice configuration</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">plot_lattice</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will produce a plot showing the spin configuration of the lattice after running the specified number of Monte Carlo steps.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qho.html" class="btn btn-neutral float-left" title="QuantumHarmonicOscillator class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tfimq.html" class="btn btn-neutral float-right" title="create_tfim_circuit function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kaushik Chintam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
