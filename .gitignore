@@ -1,0 +1,4 @@
+dist/*
+qham.egg-info/*
+build/*
+docs/_build/*

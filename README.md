@@ -24,7 +24,7 @@ Qham, can be used for,
 
 
 # Installation 
-See the Qham **[Installation][https://pypi.org/project/qham/1.0.0/]** for installation instructions.
+See the Qham [**Installation**](https://pypi.org/project/qham/1.0.0/) for installation instructions.
 
 Currently, `qham` supports releases of Python 3.6 onwards; 
 To install the current release:
