@@ -1,11 +1,6 @@
 LICENSE
 README.md
 setup.py
-Qham.egg-info/PKG-INFO
-Qham.egg-info/SOURCES.txt
-Qham.egg-info/dependency_links.txt
-Qham.egg-info/requires.txt
-Qham.egg-info/top_level.txt
 qham/__init__.py
 qham.egg-info/PKG-INFO
 qham.egg-info/SOURCES.txt
