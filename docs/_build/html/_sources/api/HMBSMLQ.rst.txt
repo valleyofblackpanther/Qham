@@ -1,0 +1,78 @@
+SquareLatticeMatrix class
+=========================
+
+.. class:: SquareLatticeMatrix(rows, cols)
+
+   Represents a square lattice using an adjacency matrix, suitable for modeling two-dimensional quantum systems.
+
+   :param rows: The number of rows in the lattice.
+   :type rows: int
+   :param cols: The number of columns in the lattice.
+   :type cols: int
+
+   .. attribute:: rows
+
+      The number of rows in the lattice.
+
+   .. attribute:: cols
+
+      The number of columns in the lattice.
+
+   .. attribute:: adjacency_matrix
+
+      A matrix representing the connections between lattice sites. Each entry (i, j) is 1 if the sites i and j are adjacent, and 0 otherwise.
+
+   .. method:: are_neighbors(site1, site2)
+
+      Checks if two sites in the lattice are neighbors.
+
+      :param site1: The index of the first site.
+      :type site1: int
+      :param site2: The index of the second site.
+      :type site2: int
+      :returns: True if site1 and site2 are adjacent, False otherwise.
+      :rtype: bool
+
+
+create_heisenberg_square_lattice_matrix_circuit function
+========================================================
+
+.. function:: create_heisenberg_square_lattice_matrix_circuit(lattice_matrix, t)
+
+   Generates a quantum circuit for the Heisenberg model based on the provided square lattice matrix. The function adds entangling gates between neighboring qubits as defined by the lattice's adjacency matrix.
+
+   :param lattice_matrix: An instance of SquareLatticeMatrix defining the lattice structure.
+   :type lattice_matrix: SquareLatticeMatrix
+   :param t: A Qiskit Parameter representing the time evolution parameter for the Heisenberg model.
+   :type t: Parameter
+   :returns: A QuantumCircuit object with the Heisenberg interactions applied between neighbors.
+   :rtype: QuantumCircuit
+
+   The quantum circuit is constructed with RXX, RYY, and RZZ gates between qubits that are neighbors according to the lattice matrix.
+
+Example Usage
+-------------
+
+To use the ``SquareLatticeMatrix`` class and ``create_heisenberg_square_lattice_matrix_circuit`` function to create a Heisenberg model circuit on a 2x2 square lattice, follow this example:
+
+.. code-block:: python
+
+   from qiskit import Aer, transpile
+
+   # Initialize a square lattice matrix for a 2x2 lattice
+   lattice_matrix = SquareLatticeMatrix(rows=2, cols=2)
+
+   # Define the time evolution parameter 't'
+   t = Parameter('t')
+
+   # Create the Heisenberg circuit using the lattice matrix
+   qc = create_heisenberg_square_lattice_matrix_circuit(lattice_matrix, t)
+
+   # Transpile the circuit for a quantum simulator backend
+   simulator = Aer.get_backend('aer_simulator')
+   transpiled_circuit = transpile(qc, simulator)
+
+   # Print the transpiled quantum circuit
+   print(transpiled_circuit)
+
+This script will output a quantum circuit that applies the Heisenberg interaction to a system modeled by a 2x2 square lattice.

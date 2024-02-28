@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>create_heisenberg_circuit function &mdash; Qham  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SquareLattice class" href="hmbslq.html" />
+    <link rel="prev" title="HeisenbergModel class" href="hmb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Qham</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#core-features">Core Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#getting-started">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../FHM/fhm.html">HubbardModel class</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hmb.html">HeisenbergModel class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">create_heisenberg_circuit function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create_heisenberg_circuit"><code class="docutils literal notranslate"><span class="pre">create_heisenberg_circuit()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hmbslq.html">SquareLattice class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbslq.html#create-heisenberg-lattice-circuit-function">create_heisenberg_lattice_circuit function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbsmlq.html">SquareLatticeMatrix class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hmbsmlq.html#create-heisenberg-square-lattice-matrix-circuit-function">create_heisenberg_square_lattice_matrix_circuit function</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../QHO/qho.html">QuantumHarmonicOscillator class</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../TFIM/tfim.html">TFIMSimulation class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TFIM/tfimq.html">create_tfim_circuit function</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Qham</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">create_heisenberg_circuit function</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/HMB/hmbq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="create-heisenberg-circuit-function">
+<h1>create_heisenberg_circuit function<a class="headerlink" href="#create-heisenberg-circuit-function" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="create_heisenberg_circuit">
+<span class="sig-name descname"><span class="pre">create_heisenberg_circuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trotter_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#create_heisenberg_circuit" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a quantum circuit that simulates the Heisenberg model. The simulation uses the Trotter-Suzuki decomposition to approximate the time evolution of the system under the Heisenberg Hamiltonian with periodic boundary conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – The number of qubits representing spins in the chain.</p></li>
+<li><p><strong>trotter_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Trotter steps to use in the decomposition, which determines the approximation accuracy.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Qiskit QuantumCircuit object that represents the simulation circuit.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QuantumCircuit</p>
+</dd>
+</dl>
+<p>The function creates a QuantumCircuit object and applies a series of RXX, RYY, and RZZ gates to simulate the interactions between adjacent spins in a 1D Heisenberg chain. The periodic boundary conditions are implemented by connecting the last qubit with the first one.</p>
+</dd></dl>
+
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading"></a></h2>
+<p>The following example demonstrates how to create a Heisenberg model circuit for a chain of 4 qubits with a single Trotter step:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">Aer</span><span class="p">,</span> <span class="n">transpile</span>
+
+<span class="c1"># Create a quantum circuit for the Heisenberg model with 4 qubits and 1 Trotter step</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">trotter_steps</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">create_heisenberg_circuit</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">trotter_steps</span><span class="p">)</span>
+
+<span class="c1"># Transpile the circuit for a simulator backend</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">Aer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;aer_simulator&#39;</span><span class="p">)</span>
+<span class="n">transpiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+
+<span class="c1"># Print the transpiled circuit</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transpiled_circuit</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hmb.html" class="btn btn-neutral float-left" title="HeisenbergModel class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hmbslq.html" class="btn btn-neutral float-right" title="SquareLattice class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kaushik Chintam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

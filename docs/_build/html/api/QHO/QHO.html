@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantumHarmonicOscillator class &mdash; Qham  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TFIMSimulation class" href="../TFIM/tfim.html" />
+    <link rel="prev" title="SquareLatticeMatrix class" href="../HMB/hmbsmlq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Qham</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#core-features">Core Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#getting-started">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../FHM/fhm.html">HubbardModel class</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmb.html">HeisenbergModel class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmbq.html">create_heisenberg_circuit function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmbslq.html">SquareLattice class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmbslq.html#create-heisenberg-lattice-circuit-function">create_heisenberg_lattice_circuit function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmbsmlq.html">SquareLatticeMatrix class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMB/hmbsmlq.html#create-heisenberg-square-lattice-matrix-circuit-function">create_heisenberg_square_lattice_matrix_circuit function</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">QuantumHarmonicOscillator class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#QuantumHarmonicOscillator"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.n"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.n</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.omega"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.omega</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.hamiltonian"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.hamiltonian</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.create_annihilation_operator"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.create_annihilation_operator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.create_hamiltonian"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.create_hamiltonian()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.find_eigenstates"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.find_eigenstates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#QuantumHarmonicOscillator.print_eigenvalues"><code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator.print_eigenvalues()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../TFIM/tfim.html">TFIMSimulation class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TFIM/tfimq.html">create_tfim_circuit function</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Qham</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">QuantumHarmonicOscillator class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/QHO/qho.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quantumharmonicoscillator-class">
+<h1>QuantumHarmonicOscillator class<a class="headerlink" href="#quantumharmonicoscillator-class" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">QuantumHarmonicOscillator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuantumHarmonicOscillator" title="Permalink to this definition"></a></dt>
+<dd><p>Represents a quantum harmonic oscillator, which is a fundamental model for quantum systems with quadratic potential energy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The number of quantum states to consider in the model.</p></li>
+<li><p><strong>omega</strong> (<em>float</em>) – The angular frequency of the oscillator.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.n">
+<span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#QuantumHarmonicOscillator.n" title="Permalink to this definition"></a></dt>
+<dd><p>The number of quantum states included in the model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.omega">
+<span class="sig-name descname"><span class="pre">omega</span></span><a class="headerlink" href="#QuantumHarmonicOscillator.omega" title="Permalink to this definition"></a></dt>
+<dd><p>The angular frequency of the harmonic oscillator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.hamiltonian">
+<span class="sig-name descname"><span class="pre">hamiltonian</span></span><a class="headerlink" href="#QuantumHarmonicOscillator.hamiltonian" title="Permalink to this definition"></a></dt>
+<dd><p>The Hamiltonian matrix representing the quantum harmonic oscillator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.create_annihilation_operator">
+<span class="sig-name descname"><span class="pre">create_annihilation_operator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QuantumHarmonicOscillator.create_annihilation_operator" title="Permalink to this definition"></a></dt>
+<dd><p>Generates the annihilation operator matrix, which is a lower-triangular matrix whose entries are related to the square root of the quantum number of each state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The annihilation operator matrix for <cite>n</cite> quantum states.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.create_hamiltonian">
+<span class="sig-name descname"><span class="pre">create_hamiltonian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QuantumHarmonicOscillator.create_hamiltonian" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs the Hamiltonian matrix for the quantum harmonic oscillator using the annihilation and creation (adjoint of annihilation) operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The Hamiltonian matrix for the oscillator.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.find_eigenstates">
+<span class="sig-name descname"><span class="pre">find_eigenstates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QuantumHarmonicOscillator.find_eigenstates" title="Permalink to this definition"></a></dt>
+<dd><p>Diagonalizes the Hamiltonian matrix to find the eigenvalues and eigenvectors, which correspond to the energy levels and quantum states of the oscillator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing an array of eigenvalues and a matrix of eigenvectors.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(torch.Tensor, torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuantumHarmonicOscillator.print_eigenvalues">
+<span class="sig-name descname"><span class="pre">print_eigenvalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QuantumHarmonicOscillator.print_eigenvalues" title="Permalink to this definition"></a></dt>
+<dd><p>Prints the eigenvalues of the Hamiltonian, which represent the energy levels of the quantum harmonic oscillator.</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading"></a></h2>
+<p>The following example demonstrates how to instantiate the <code class="docutils literal notranslate"><span class="pre">QuantumHarmonicOscillator</span></code> class and print out the energy levels of the oscillator:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the quantum harmonic oscillator with 10 states and an angular frequency of 1.0</span>
+<span class="n">qho</span> <span class="o">=</span> <span class="n">QuantumHarmonicOscillator</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># Print the energy levels of the oscillator</span>
+<span class="n">qho</span><span class="o">.</span><span class="n">print_eigenvalues</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will display the energy levels of a quantum harmonic oscillator with 10 quantum states and an angular frequency of 1.0.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../HMB/hmbsmlq.html" class="btn btn-neutral float-left" title="SquareLatticeMatrix class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../TFIM/tfim.html" class="btn btn-neutral float-right" title="TFIMSimulation class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kaushik Chintam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

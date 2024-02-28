@@ -1,0 +1,39 @@
+create_tfim_circuit function
+============================
+
+.. function:: create_tfim_circuit(n_qubits, theta_z, theta_x, periodic_boundary=False)
+
+   Constructs a quantum circuit that simulates the Transverse Field Ising Model (TFIM) on a chain of qubits. The circuit includes ZZ interactions and transverse field applications, with an option for periodic boundary conditions.
+
+   :param n_qubits: The number of qubits, representing spins in the TFIM chain.
+   :type n_qubits: int
+   :param theta_z: The angle parameter for the ZZ interaction gates (RZ rotations).
+   :type theta_z: float
+   :param theta_x: The angle parameter for the RX transverse field gates.
+   :type theta_x: float
+   :param periodic_boundary: Flag to determine whether to apply periodic boundary conditions, connecting the last qubit to the first.
+   :type periodic_boundary: bool, optional
+   :returns: The quantum circuit representing the TFIM simulation.
+   :rtype: QuantumCircuit
+
+   This function uses the Qiskit library to create a circuit with controlled-X (CX) and rotation gates (RZ, RX) to represent the interactions in the TFIM. It supports the application of periodic boundary conditions to model a closed spin chain.
+
+Example Usage
+-------------
+
+The following example demonstrates the creation of a TFIM circuit for 4 qubits with specified theta parameters and periodic boundary conditions:
+
+.. code-block:: python
+
+   # Define the number of qubits and interaction parameters
+   n_qubits = 4
+   theta_z = 1.0  # ZZ interaction strength
+   theta_x = 1.5  # Transverse field strength
+   
+   # Create the TFIM circuit with periodic boundary conditions
+   qc = create_tfim_circuit(n_qubits, theta_z, theta_x, periodic_boundary=True)
+   
+   # Print the circuit for inspection
+   print(qc)
+
+This script will output a quantum circuit for the TFIM model that includes periodic boundary conditions.
