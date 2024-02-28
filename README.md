@@ -15,7 +15,7 @@ Qham is a Python library that consists of the following components:
 | [**qham.fhm**]() | FermiHubbard Modal |
 | [**qham.hbm**]() | Heisenberg Modal |
 | [**qham.qho**]() | Quantum Harmonic Oscillator |
-| [**caer.TFIM**]() | Transverse Field Ising Model |
+| [**qham.TFIM**]() | Transverse Field Ising Model |
 
 Qham, can be used for,
 
