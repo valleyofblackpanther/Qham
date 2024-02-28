@@ -1,3 +1,3 @@
-__all__ = [HubbardModel]
+__all__ = ['HubbardModel']
 
 from qham.FHM.fhm import HubbardModel

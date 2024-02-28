@@ -1,3 +1,3 @@
-__all__ = ["QuantumHarmonicOscillator"]
+__all__ = ['QuantumHarmonicOscillator']
 
 from qham.QHO.qho import QuantumHarmonicOscillator
