@@ -11,11 +11,11 @@ Qham is a Python library that consists of the following components:
 
 | Component | Description |
 | ---- | --- |
-| [**qham**]() | A lightweight Quantum Hamiltonian Simulations for high-performance Quantum research |
-| [**qham.fhm**]() | FermiHubbard Modal |
-| [**qham.hbm**]() | Heisenberg Modal |
-| [**qham.qho**]() | Quantum Harmonic Oscillator |
-| [**qham.TFIM**]() | Transverse Field Ising Model |
+| [**qham**](https://qham.readthedocs.io/en/latest/introduction.html) | A lightweight Quantum Hamiltonian Simulations for high-performance Quantum research |
+| [**qham.fhm**](https://qham.readthedocs.io/en/latest/fhm.html) | FermiHubbard Modal |
+| [**qham.hbm**](https://qham.readthedocs.io/en/latest/hmb.html) | Heisenberg Modal |
+| [**qham.qho**](https://qham.readthedocs.io/en/latest/qho.html) | Quantum Harmonic Oscillator |
+| [**qham.TFIM**](https://qham.readthedocs.io/en/latest/tfim.html) | Transverse Field Ising Model |
 
 Qham, can be used for,
 
@@ -24,7 +24,7 @@ Qham, can be used for,
 
 
 # Installation 
-See the Qham **[Installation][]** guide for detailed installation instructions (including building from source).
+See the Qham **[Installation][https://pypi.org/project/qham/1.0.0/]** for installation instructions.
 
 Currently, `qham` supports releases of Python 3.6 onwards; 
 To install the current release:
@@ -52,39 +52,23 @@ sim.plot_lattice()
 
 # Resources
 
-- [**PyPi**]()
-- [**Documentation**]()
-- [**Issue tracking**]()
+- [**PyPi**](https://pypi.org/project/qham/1.0.0/)
+- [**Documentation**](https://qham.readthedocs.io/en/latest/)
+- [**Issue tracking**](https://github.com/valleyofblackpanther/Qham/issues)
 
 
 # Contributing
 
-We appreciate all contributions, feedback and issues. If you plan to contribute new features, utility functions, or extensions to the core, please go through our [Contribution Guidelines][].
+We appreciate all contributions, feedback and issues. If you plan to contribute new features, utility functions, or extensions to the core.
 
-To contribute, start working through the `qham` codebase, read the [Documentation][], navigate to the [Issues][] tab and start looking through interesting issues. 
+
 
 # Asking for help
 If you have any questions, please:
-1. [Read the docs](https://caer.rtfd.io/en/latest/).
-2. [Look it up in our Github Discussions (or add a new question)]().
-2. [Search through the issues]().
+1. [Read the docs](https://qham.readthedocs.io/en/latest/).
+2. [Search through the issues](https://github.com/valleyofblackpanther/Qham/issues).
 
 
 # License
 
 qham is open-source and released under the [MIT License](LICENSE).
-
-
-<!-- [contributing]: https://github.com/jasmcaus/caer/blob/master/.github/CONTRIBUTING.md
-[docs]: https://caer.rtfd.io
-[contributors]: https://github.com/jasmcaus/caer/blob/master/CONTRIBUTORS
-[coc]: https://github.com/jasmcaus/caer/blob/master/CODE_OF_CONDUCT.md
-[issues]: https://github.com/jasmcaus/caer/issues
-[install]: https://github.com/jasmcaus/caer/blob/master/INSTALL.md
-[demos]: https://github.com/jasmcaus/caer/blob/master/examples/
-
-[twitter-badge]: https://twitter.com/jasmcaus
-[downloads]: https://pepy.tech/project/caer
-[py-versions]: https://pypi.org/project/caer/
-[pypi-latest-version]: https://pypi.org/project/caer/
-[license]: https://github.com/jasmcaus/caer/blob/master/LICENSE -->
